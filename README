@@ -1,0 +1,53 @@
+=============================================
+==                                         ==
+== Fault Detection in a E-puck robot swarm ==
+==                                         ==
+=============================================
+
+AUTHOR: Danesh Tarapore <daneshtarapore@gmail.com>
+DATE: 22/06/2018
+
+
+
+*** INTRODUCTION ***
+
+In this package you'll find the fault detection algorithm demonstrated on a swarm of e-puck robots. To run the experiments you will need ARGoS simulator available at https://www.argos-sim.info
+
+
+
+*** THE EXPERIMENTS ***
+
+EPUCK_HOM_SWARM: Homogenous swarm behaviours -- all robots of the swarm perform the same behavior, one of aggregation, dispersion, flocking or homing. 
+
+EPUCK_FORAGING: Heterogeneous swarm behaviours -- robots of the swarm perform different behaviours of exploring the environment for resources, signalling the position of resources to other members of the swarm, returning the resources back to the base, and recharging at the base.
+
+
+*** COMPILATION ***
+
+To compile the code, open up a shell, go to the directory where you unpacked the repository and type:
+
+$ mkdir build
+$ cd build
+
+To produce debuggable code (slow), type:
+
+$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+
+To produce fast but not debuggable code, type:
+
+$ cmake -DCMAKE_BUILD_TYPE=Release ..
+
+Finally, launch the compilation with the command:
+
+$ make
+
+If you find no error, you're ready to go to the next phase.
+
+*** RUNNING THE EXPERIMENTS ***
+
+To run the experiments type:
+
+$ argos3 -c experiments/epuck_foraging.argos
+
+$ argos3 -c experiments/epuck_hom_swarm.argos
+
