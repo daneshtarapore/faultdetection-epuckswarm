@@ -13,6 +13,8 @@ DATE: 22/06/2018
 
 In this package you'll find the fault detection algorithm demonstrated on a swarm of e-puck robots. To run the experiments you will need ARGoS simulator available at https://www.argos-sim.info
 
+The fault detection algorithm is part of the study: Tarapore, Danesh, Anders Lyhne Christensen, and Jon Timmis. "Generic, scalable and decentralized fault detection for robot swarms." PloS one 12.8 (2017): e0182058.
+
 
 
 *** THE EXPERIMENTS ***
@@ -20,6 +22,7 @@ In this package you'll find the fault detection algorithm demonstrated on a swar
 EPUCK_HOM_SWARM: Homogenous swarm behaviours -- all robots of the swarm perform the same behavior, one of aggregation, dispersion, flocking or homing. 
 
 EPUCK_FORAGING: Heterogeneous swarm behaviours -- robots of the swarm perform different behaviours of exploring the environment for resources, signalling the position of resources to other members of the swarm, returning the resources back to the base, and recharging at the base.
+
 
 
 *** COMPILATION ***
@@ -42,6 +45,8 @@ Finally, launch the compilation with the command:
 $ make
 
 If you find no error, you're ready to go to the next phase.
+
+
 
 *** RUNNING THE EXPERIMENTS ***
 
