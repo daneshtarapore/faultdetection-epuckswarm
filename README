@@ -11,7 +11,7 @@ DATE: 22/06/2018
 
 *** INTRODUCTION ***
 
-In this package you'll find the fault detection algorithm demonstrated on a swarm of e-puck robots. To run the experiments you will need ARGoS simulator available at https://www.argos-sim.info
+In this package you'll find the fault detection algorithm demonstrated on a swarm of e-puck robots. To run the experiments you will need ARGoS simulator available at https://www.argos-sim.info. The code was tested on ARGoS version 3.0.0-beta49.
 
 The fault detection algorithm is part of the study: Tarapore, Danesh, Anders Lyhne Christensen, and Jon Timmis. "Generic, scalable and decentralized fault detection for robot swarms." PloS one 12.8 (2017): e0182058.
 

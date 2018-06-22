@@ -41,7 +41,7 @@
         <experiment_run swarm_behavior="SWARM_FLOCKING"
 			swarm_behavior_trans=""
 			time_between_robots_trans_behav="-1.0"
-			fault_behavior="FAULT_RABSENSOR_SETOFFSET" 
+			fault_behavior="FAULT_NONE" 
 	                id_faulty_robot="15" />
         <wheel_turning max_speed="5" />
       </params>
