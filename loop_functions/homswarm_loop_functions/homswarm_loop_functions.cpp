@@ -107,7 +107,7 @@ void CHomSwarmLoopFunctions::PreStep()
                           cEPuck2.GetEmbodiedEntity().GetOriginAnchor().Position.GetY());
 
                 float dist = (cPos1- cPos2).Length();
-                std::cerr << "Robot id: " << rob_id2 << " dist " << dist << std::endl;
+                //std::cerr << "Robot id: " << rob_id2 << " dist " << dist << std::endl;
             }
         }
     }

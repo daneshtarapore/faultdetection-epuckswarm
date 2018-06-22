@@ -501,7 +501,7 @@ void WriteToCommunicationChannel(CCI_RangeAndBearingActuator *m_pcRABA, unsigned
         std::cerr << " buffer_full " << " WriteToCommunicationChannel(CCI_RangeAndBearingActuatorpcRABA,  CProprioceptiveFeatureVector &m_cProprioceptiveFeatureVector,        CObservedFeatureVector &m_cObservationFeatureVector, CBayesianInferenceFeatureVector &m_cBayesianInferredFeatureVector,unsigned SelfId, const CCI_RangeAndBearingSensor::TReadingsdings& tPackets, t_listMapFVsToRobotIds &IdToFVsMap_torelay) ";
         exit(-1);
     }
-    m_pcRABA->SetData(databyte_index, RELAY_FVS_PACKET_FOOTER);
+    m_pcRABA->SetData(databyte_index++, RELAY_FVS_PACKET_FOOTER);
 }
 
 /****************************************/
@@ -551,7 +551,7 @@ void WriteToCommunicationChannel(CCI_RangeAndBearingActuator* m_pcRABA, unsigned
         }
     }
 
-    m_pcRABA->SetData(databyte_index, RELAY_FVS_PACKET_FOOTER);
+    m_pcRABA->SetData(databyte_index++, RELAY_FVS_PACKET_FOOTER);
 }
 
 /****************************************/
@@ -608,7 +608,7 @@ void WriteToCommunicationChannel(CCI_RangeAndBearingActuator *m_pcRABA, unsigned
             std::cerr << " buffer full. no place to write end buffer " << std::endl;
             exit(-1);
         }
-        m_pcRABA->SetData(databyte_index, VOTER_PACKET_FOOTER);
+        m_pcRABA->SetData(databyte_index++, VOTER_PACKET_FOOTER);
         return;
     }
 
@@ -656,7 +656,7 @@ void WriteToCommunicationChannel(CCI_RangeAndBearingActuator *m_pcRABA, unsigned
             std::cerr << " buffer full. no place to write end buffer " << std::endl;
             exit(-1);
         }
-        m_pcRABA->SetData(databyte_index, VOTER_PACKET_FOOTER);
+        m_pcRABA->SetData(databyte_index++, VOTER_PACKET_FOOTER);
         return;
     }
 
@@ -727,7 +727,7 @@ void WriteToCommunicationChannel(CCI_RangeAndBearingActuator *m_pcRABA, unsigned
     }
 
     if(databyte_index != m_pcRABA->GetSize()-1) // END_BUFFER has not yet been placed
-        m_pcRABA->SetData(databyte_index, VOTER_PACKET_FOOTER);
+        m_pcRABA->SetData(databyte_index++, VOTER_PACKET_FOOTER);
 }
 
 /****************************************/

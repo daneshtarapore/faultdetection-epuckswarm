@@ -96,7 +96,7 @@
       <position method="uniform" min="-1.5,-1.5,0" max="1.5,1.5,0" />
       <orientation method="uniform" min="0,0,0" max="360,0,0" />
       <entity quantity="20" max_trials="5">
-	<e-puck id="ep" rab_data_size="200" rab_range="1">    <!-- using a high bandwidth of 100 bytes for now -->
+	<e-puck id="ep" rab_data_size="1000" rab_range="1">    <!-- using a high bandwidth of 100 bytes for now -->
           <controller config="efc" />
         </e-puck>
       </entity>
