@@ -1,4 +1,4 @@
-#ifndef PHOTOTAXISBEHAVIOR_H_
+#ifndef PHOTOTAXISBEHAVIOR_H
 #define PHOTOTAXISBEHAVIOR_H
 
 /******************************************************************************/
