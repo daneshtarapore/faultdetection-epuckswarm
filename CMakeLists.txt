@@ -1,11 +1,21 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(faultdetection-epuckswarm)
 
+if(APPLE)
+  # Add address sanitizer support for CLang
+  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -fsanitize=address -fno-optimize-sibling-calls -fno-omit-frame-pointer")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address -fno-optimize-sibling-calls -fno-omit-frame-pointer")
+  set(CMAKE_MODULE_LINKER_FLAGS_DEBUG "${CMAKE_MODULE_LINKER_FLAGS_DEBUG} -fsanitize=address")
+  set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_MODULE_LINKER_FLAGS_DEBUG} -fsanitize=address")
+  set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_MODULE_LINKER_FLAGS_DEBUG} -fsanitize=address")
+endif(APPLE)
+
+# Deactivate RPATH for MacOSX
+set(CMAKE_MACOSX_RPATH 0)
 
 # Set the path where CMake will find additional scripts
 set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
-
 
 # Find the ARGoS package, make sure to save the ARGoS prefix
 find_package(PkgConfig)
