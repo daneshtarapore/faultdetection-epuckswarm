@@ -15,7 +15,7 @@ def process_dataline(line):
 	Processes a raw dataline into a dict of useful information
 	"""
 
-	if len(line.split('\t')) == 2:
+	if len(line.split('\t')) != 5:
 		return None # there is no data here 
 
 	
@@ -27,10 +27,23 @@ def process_dataline(line):
 
 	data = Dataline(time, robot, tolerators, attackers)
 
-	print(data)
 	return data
 
-    
+
+def process_file(file):
+	"""
+	Returns a list of processed datalines for the given file
+	"""
+
+	# Read in the data from the nohup.txt file
+	lines = []
+	with open(file, 'r') as datafile:
+		for line in datafile.readlines():
+			processed = process_dataline(line)
+			if processed is not None:
+				lines.append(processed)
+	return lines
+
 
 
 if __name__ == "__main__":
@@ -40,10 +53,7 @@ if __name__ == "__main__":
 	process_dataline("Clock: 453	Id: 0	FV: 55	Consensus_Tolerators:  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1 	Consensus_Attackers:  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1 ")
 	process_dataline('Clock: 1695	Id: 12	FV: 53	Consensus_Tolerators: 0 12 13 14 16 17 18 19 2 3 4 5 7 8 9  -1  -1  -1  -1  -1 	Consensus_Attackers: 1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1 ')
 
+	data = process_file('nohup.txt')
+	print(data)
 
-    # # Read in the data from the nohup.txt file
-    # step = 0
-    # with open("../nohup.txt", 'r') as datafile:
-    #     line = datafile.readline()
-    #     processed = process_dataline(line)
         
