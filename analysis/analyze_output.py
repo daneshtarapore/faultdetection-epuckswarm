@@ -69,6 +69,7 @@ def time_sus(data: list[Dataline], num_robots):
 
 		robot_ind = line.robot
 		sus = len(line.attackers) >= num_robots / 2
+		antisus = len(line.tolerators) >= num_robots / 2
 
 		# Case 1: Neighbors now think you are faultly
 		if sus and not currently_faulty[robot_ind]:
@@ -78,7 +79,7 @@ def time_sus(data: list[Dataline], num_robots):
 				print(f"Robot 15 declared fault at {line.time}")
 
 		# Case 2: Neighbors no longer think you are faulty
-		elif not sus and currently_faulty[robot_ind]:
+		elif antisus and currently_faulty[robot_ind]:
 			currently_faulty[robot_ind] = 0
 			total_faulty_time[robot_ind] = total_faulty_time[robot_ind] + (line.time - declared_faulty_time[robot_ind])
 			declared_faulty_time[robot_ind] = 0
